@@ -1,0 +1,27 @@
+from django.test import TestCase
+
+from ..models import Puppy
+from rest_framework.reverse import reverse
+from ..serializers import PuppySerializer
+from rest_framework import status
+from django.test import TestCase, Client
+# from test_views import client
+
+class PuppyTest(TestCase):
+
+    def setUp(self):
+        Puppy.objects.create(
+            name='Casper', age=3, breed='Bull Dog',color='Black')
+        Puppy.objects.create(
+            name='Muffin', age=1, breed='Gradane', color='Brown')
+
+
+    def test_puppy_breed(self):
+        puppy_casper = Puppy.objects.get(name='Casper')
+        puppy_muffin = Puppy.objects.get(name='Muffin')
+        self.assertEqual(
+            puppy_casper.get_breed(),"Casper belongs to Bull Dog breed.")
+        self.assertEqual(
+            puppy_muffin.get_breed(),"Muffin belongs to Gradane breed.")
+
+# Create your tests here.
