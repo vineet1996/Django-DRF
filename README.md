@@ -143,9 +143,13 @@ http://localhost:8000/api/v1/puppies/
 
 shows list of puppies added to database in json format
 
+![alt text](docs/get.png)
+
 http://localhost:8000/api/v1/puppies/<pk>
 
 gives the particular data of primary key
+
+![alt text](docs/get1.png)
 
 To add values to database throught browsable api 
 
@@ -160,8 +164,14 @@ Add data in the content field in json format and POST . It will be added to the 
     "color": "Black"
 }
 ```
+![alt text](docs/post.png)
+
 And to update data 
 
 http://localhost:8000/api/v1/puppies/<pk>
 
 with the particular pk value update the values in json format , add it to content field and PUT. It will be updated 
+
+![alt text](docs/put.png)
+
+![alt text](docs/put1.png)
